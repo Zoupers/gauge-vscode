@@ -102,7 +102,9 @@ export class CLI {
 
     private static getCommand(command: string): string {
         let validExecExt = [""];
-        if (platform() === 'win32') validExecExt.push(".bat", ".exe", ".cmd");
+        if (platform() === 'win32') {
+            validExecExt = [".bat", ".cmd"]
+        };
         for (const ext of validExecExt) {
             let executable = `${command}${ext}`;
             if (!spawnSync(executable).error) return executable;
