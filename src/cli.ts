@@ -26,9 +26,6 @@ export class CLI {
     public static getDefaultSpawnOptions(): CommonSpawnOptions {
         // should only deal with platform specific options
         let options: CommonSpawnOptions = {};
-        if(platform() === "win32") {
-            options.shell = true;
-        }
         return options;
     }
 
